@@ -14,12 +14,12 @@ namespace cw3.DAL
             new Student {IdStudent = 3, FirstName = "Andrzej", LastName = "Andrzejewicz"}
         };
 
-        public IEnumerable<Student> GetEntries()
+        public IEnumerable<Student> GetStudents()
         {
             return Students;
         }
 
-        public Student GetEntry(int id)
+        public Student GetStudents(int id)
         {
             var studentsWithId = Students.Where(student => student.IdStudent == id).ToList();
             if (studentsWithId.Count == 0) return null;
@@ -36,16 +36,16 @@ namespace cw3.DAL
             return ids.Last() + 1;
         }
 
-        public void AddEntry(Student entryToAdd)
+        public void AddStudent(Student StToAdd)
         {
-            if (Students.Count(student => student.IdStudent == entryToAdd.IdStudent) > 0)
-                throw new DataException($"Student o id: {entryToAdd.IdStudent} już istnieje");
-            Students.Add(entryToAdd);
+            if (Students.Count(student => student.IdStudent == StToAdd.IdStudent) > 0)
+                throw new DataException($"Student o id: {StToAdd.IdStudent} już istnieje");
+            Students.Add(StToAdd);
         }
 
-        public void RemoveEntry(Student entryToRemove)
+        public void RemoveStudent(Student StToRemove)
         {
-            Students.Remove(entryToRemove);
+            Students.Remove(StToRemove);
         }
     }
 }

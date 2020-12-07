@@ -4,10 +4,10 @@ namespace cw3.DAL
 {
     public interface IDbService<T>
     {
-        public IEnumerable<T> GetEntries();
-        public T GetEntry(int id);
+        public IEnumerable<T> GetStudents();
+        public T GetStudents(int id);
         public int NextId();
-        public void AddEntry(T entryToAdd);
-        public void RemoveEntry(T entryToRemove);
+        public void AddStudent(T entryToAdd);
+        public void RemoveStudent(T entryToRemove);
     }
 }
